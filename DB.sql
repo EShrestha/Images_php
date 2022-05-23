@@ -3,7 +3,7 @@ CREATE TABLE Images
 (
     imageID int AUTO_INCREMENT,
     title varchar(15),
-    viewCount int,
+    viewCount int DEFAULT 0,
     PRIMARY KEY(ImageID)
 );
 

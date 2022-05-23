@@ -24,7 +24,6 @@ function Get_All_Posts($dbConnection){
     return @mysqli_query($dbConnection, $q);
 }
 
-
 function Get_User($dbConnection, $username, $password){
     $q = "SELECT * FROM Users WHERE username LIKE '{$username}' AND  pwd LIKE '{$password}'";
     return @mysqli_query($dbConnection, $q);
@@ -42,12 +41,14 @@ function Delete_Post($dbConnection, $imageID){
 
 function Get_Post($dbConnection, $imageID){
     $q = "SELECT * FROM Images WHERE imageID = {$imageID}";
+    $q2 = "UPDATE Images SET viewCount = viewCount + 1";
+    @mysqli_query($dbConnection, $q2);
     return @mysqli_query($dbConnection, $q);
 }
 
 function Post_Comment($dbConnection, $belongsTo, $comment)
 {
-    $q = "INSERT INTO Comments (belongsTo, comment) VALUES ('{$belongsTo}, '{$comment}')";
+    $q = "INSERT INTO Comments (belongsTo, comment) VALUES ({$belongsTo}, '{$comment}')";
     return @mysqli_query($dbConnection, $q);
 }
 
@@ -57,12 +58,3 @@ function Get_Comments($dbConnection, $imageID){
 }
 
 ?>
-
-
-
-
-
-
-
-
-
