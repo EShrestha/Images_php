@@ -57,4 +57,30 @@ function Get_Comments($dbConnection, $imageID){
     return @mysqli_query($dbConnection, $q);
 }
 
+
+// FILTERS
+
+function Filter_By_ViewCount_ASC($dbConnection)
+{
+    $q = "SELECT * FROM Images
+            ORDER BY viewCount ASC";
+    return @mysqli_query($dbConnection, $q);
+}
+
+function Filter_By_ViewCount_DESC($dbConnection)
+{
+    $q = "SELECT * FROM Images
+            ORDER BY viewCount DESC";
+    return @mysqli_query($dbConnection, $q);
+}
+
+function Filter_By_Relevance($dbConnection, $keyword)
+{
+    $q = "SELECT * 
+            FROM Images 
+            WHERE title LIKE '%{$keyword}%'
+            ORDER BY CASE WHEN title LIKE '{$keyword}%' THEN 1 ELSE 2 END, title";
+    return @mysqli_query($dbConnection, $q);
+}
+
 ?>
