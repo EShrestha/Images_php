@@ -10,6 +10,7 @@ CREATE TABLE Images
 CREATE TABLE Comments
 (
     belongsTo int,
+    username varchar(20),
     comment varchar(140) 
 );
 

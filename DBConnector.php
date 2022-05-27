@@ -46,9 +46,12 @@ function Get_Post($dbConnection, $imageID){
     return @mysqli_query($dbConnection, $q);
 }
 
-function Post_Comment($dbConnection, $belongsTo, $comment)
+function Post_Comment($dbConnection, $belongsTo, $comment, $username)
 {
-    $q = "INSERT INTO Comments (belongsTo, comment) VALUES ({$belongsTo}, '{$comment}')";
+    if(!$username){
+        $username = "anonymous";
+    }
+    $q = "INSERT INTO Comments (belongsTo, comment, username) VALUES ({$belongsTo}, '{$comment}', '{$username}')";
     return @mysqli_query($dbConnection, $q);
 }
 

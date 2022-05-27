@@ -1,51 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imurger</title>
+    <title class="title"></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <style>
-        input{
-            margin-top: 1em;
-        }
-        button{
-            margin-top: 2em;
-        }
         body{
-            text-align:center;
+            text-align: center;
         }
     </style>
-    <link rel="stylesheet" href="style.css">
+</head>
+<body>
     <nav>
         <ul id="navbar">
             <h1><a href="index.html">Imurger</a></h1>
             <li><a href="upload.html">Upload</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li><a id='login' href="login.html">Login</a></li>
         </ul>
     </nav>
-</head>
-
-<body>
-
-
-        <label for="username">Username:</label>
-        <input id="username" type="text" name="username">
-        <br>
-        <br>
-        <label for="password">Password:</label>
-        <input id="pwd" type="password" name="pwd">
-        <br>
-        <button id="submitBtn">
-            Login
-        </button>
-
-
+    <h1 class="title">Title</h1>
+    <img id="image">
+    <br>
+    <div id="views"></div>
+    <textarea id="comment_box" placeholder="Enter comment"></textarea>
+    <br>
+    <button id="send_button">Comment</button>
+    
+    <div id="comments">
+    </div>
+    <script src="image_script.js"></script>
+    <script src="navbar.js"></script>
 </body>
-<script lang="js" src="./login.js"></script>
-
 </html>

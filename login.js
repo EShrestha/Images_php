@@ -1,4 +1,5 @@
 const req = new XMLHttpRequest();
+const server = 'http://pi-bortiz';
 
 // Helper function to make sending requests easier
 const sendRequest = (method, url, onload, params) => {
@@ -15,10 +16,11 @@ const sendRequest = (method, url, onload, params) => {
 
 const username = document.getElementById("username");
 const pwd = document.getElementById("pwd");
-
+const button = document.getElementById('submitBtn').addEventListener('click', login);
 const checkLogin = (e) => {
     let res = req.responseText;
     if (res.trim() === 'valid') {
+        console.log('hello');
         window.location.href = "index.html";
     } else {
         alert("Invalid, try again");
@@ -29,5 +31,4 @@ const checkLogin = (e) => {
 
 function login() {
     sendRequest("GET", `Login.php?username=${username.value}&password=${pwd.value}`, checkLogin);
-    return false;
 }

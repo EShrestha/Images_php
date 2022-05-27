@@ -14,10 +14,10 @@ if($result){
 
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
-  	SaveImage($count, $_FILES["fileToUpload"]["tmp_name"]);
+  SaveImage($count, $_FILES["fileToUpload"]["tmp_name"]);
 } 
 else {
-	echo "File is not an image.";
+		echo "File is not an image.";
 }
 
 function SaveImage($filename, $file){

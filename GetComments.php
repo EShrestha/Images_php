@@ -15,9 +15,10 @@ if($dbres){
         do {
             // Getting information from the row
             $comment = $rows['comment'];
+            $username = $rows['username'];
 
             // Adding info to array
-                $result['result'][] = array('comment' => $comment);
+                $result['result'][] = array('comment' => $comment, 'username' => $username);
         } while ($rows = mysqli_fetch_assoc($dbres));
 
         mysqli_close($myDbConn);

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,43 +8,26 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
-    <style>
-        input{
-            margin-top: 1em;
-        }
-        button{
-            margin-top: 2em;
-        }
-        body{
-            text-align:center;
-        }
-    </style>
     <link rel="stylesheet" href="style.css">
+</head>
+<body>
     <nav>
         <ul id="navbar">
             <h1><a href="index.html">Imurger</a></h1>
             <li><a href="upload.html">Upload</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li><a id='login' href="login.html">Login</a></li>
         </ul>
     </nav>
-</head>
-
-<body>
-
-
-        <label for="username">Username:</label>
-        <input id="username" type="text" name="username">
-        <br>
-        <br>
-        <label for="password">Password:</label>
-        <input id="pwd" type="password" name="pwd">
-        <br>
-        <button id="submitBtn">
-            Login
-        </button>
-
-
+    
+    <div id="bar2">
+        <input id="searchbar" type="text" placeholder="Search"/>
+        <button id="asc_button">Ascending Views</button>
+        <button id="desc_button">Descending Views</button>
+    </div>
+    
+    <div id="container">
+    </div>
+    <script src="script.js"></script>
+    <script src="navbar.js"></script>
 </body>
-<script lang="js" src="./login.js"></script>
-
 </html>
